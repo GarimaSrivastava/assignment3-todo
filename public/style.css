@@ -1,0 +1,21 @@
+
+div.heading{
+    align-content: center;
+    text-align: center;
+    background: #faffc2;
+}
+
+
+div.todoStatusACTIVE{
+    color : blue
+}
+
+div.todoStatusCOMPLETE{
+    color : green ;
+    text-decoration : line-through
+}
+
+div.todoStatusDELETED{
+    color : red ;
+    text-decoration : line-through
+}
