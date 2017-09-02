@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TODO LIST</title>
     <link rel = "stylesheet" href="/style.css"/>
 </head>
 <body>
-<div>
+<div class = "container-fluid">
 
-    <div>
+    <div class = "heading container-fluid">
         <h1>  My TODO</h1> <br>
     </div>
 
-    <div>
-        <div></div>
-        <div>
+    <div class="active-todo container-fluid breathTop borderBottom">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
             <div><p><b>ACTIVE TODO</b></p></div>
             <div id ="todo_list_div_active"></div>
         </div>
@@ -24,14 +25,14 @@
 
 
 
-    <div>
-        <div></div>
+    <div class="container-fluid borderBottom">
+        <div class="col-xs-2"></div>
         <div id="add_todo_div" class="col-xs-8">
             <div><p><b>ADD TODO</b></p></div>
-            <div>
-                <input id="new_todo_input" type="text" placeholder="Todo Title Goes Here">
+            <div class="col-xs-6 w3-container">
+                <input id="new_todo_input" type="text" placeholder="Todo Title Goes Here" class="w3-input">
             </div>
-            <div>
+            <div class="btn-group">
 
                 <button  class="btn-xs" onclick="addTodoAJAX()">ADD</button>
 
@@ -41,34 +42,44 @@
 
 
 
-    <div>
-        <div></div>
-        <div>
+    <div class="container-fluid borderBottom">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
             <p><b>Completed Todos</b></p>
             <div id="todo_list_div_complete"></div>
         </div>
-
+        <div class="col-xs-2">
+            <button class="btn btn-link btn-xs" onclick="toggleVisibilityComplete()">Hide Completed Items</button>
+        </div>
     </div>
 
 
-    <div>
-        <div></div>
-        <div>
+    <div class="container-fluid">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
             <div><p><b>Deleted TODO</b></p></div>
 
             <div id="todo_list_div_delete" >
 
             </div>
         </div>
-
+        <div class="col-xs-2">
+            <button class="btn btn-link btn-xs" onclick="toggleVisibilityDeleted()">Hide Deleted Items</button>
+        </div>
     </div>
 
 
 </div>
 
-
 <script src = "/script.js" type="text/javascript"></script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>
