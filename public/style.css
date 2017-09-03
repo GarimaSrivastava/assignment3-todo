@@ -1,38 +1,36 @@
-.btn-group button {
-    background-color: #81c0ff;
-    border: 1px #44b3ff;
-    color: black;
-    padding: 5px 10px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left;
+.button{
+    background-color: #b3d9ff;
+}
 
+.add{
+    color: #d9d9d9;
+    font-size: larger;
 }
 
 div.heading{
     align-content: center;
     text-align: center;
-    background: #faffc2;
 }
 
-
-.breathTop {
+.top {
     margin-top: 50px;
 }
 
-.borderBottom {
+.border {
     border: solid #ffffff;
     border-bottom-color: #000000;
 }
 
-.breathHorizontal {
+.horizontal {
     margin-left: 5px;
     margin-right: 5px;
 }
 
-.breathVertical {
+.vertical {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 div.todoStatusACTIVE{
     color : blue
 }
@@ -46,3 +44,4 @@ div.todoStatusDELETED{
     color : red ;
     text-decoration : line-through
 }
+

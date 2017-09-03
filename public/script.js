@@ -1,9 +1,9 @@
 const RESPONSE_DONE = 4;
 const STATUS_OK = 200;
-const ACTIVE_TODO_ID = "todo_list_div_active"
-const COMPELTE_TODO_ID = "todo_list_div_complete"
-const DELETE_TODO_ID = "todo_list_div_delete"
-const TODO_ID_NEW = "new_todo_input"
+const ACTIVE_TODO_ID = "todo_list_active"
+const COMPELTE_TODO_ID = "todo_list_complete"
+const DELETE_TODO_ID = "todo_list_delete"
+const TODO_ID_NEW = "todo_input"
 const STATUS_ACTIVE = "ACTIVE"
 const STATUS_COMPLETE = "COMPLETE"
 const STATUS_DELETE = "DELETED"
@@ -17,6 +17,7 @@ function removeChildNode(parent) {
     }
 }
 
+//add todo elements
 function addTodoElements(todo_data_json) {
 
     var todos = JSON.parse(todo_data_json);
@@ -42,28 +43,30 @@ function addTodoElements(todo_data_json) {
         {
             delete_parent.appendChild(deleteCreateElement(_id,todos[_id]));
         }
-
-
     }
-
 }
 
+//active elements section
 function activeCreateElement(_id,todo_object) {
     var todo_element = document.createElement("div");
     todo_element.setAttribute("data-id",_id);
-    todo_element.appendChild(createTitle(todo_object));
     todo_element.appendChild(createCheckbox(_id, todo_object));
+    todo_element.appendChild(createTitle(todo_object));
     todo_element.appendChild(createDeleteX(_id));
     return todo_element;
 }
+
+//complete elements section
 function completeCreateElement(_id,todo_object) {
     var todo_element = document.createElement("div");
     todo_element.setAttribute("data-id", _id);
-    todo_element.appendChild(createTitle(todo_object));
     todo_element.appendChild(createCheckbox(_id, todo_object));
+    todo_element.appendChild(createTitle(todo_object));
     todo_element.appendChild(createDeleteX(_id));
     return todo_element;
 }
+
+//deleted elements section
 function deleteCreateElement(_id,todo_object) {
     var todo_element = document.createElement("div");
     todo_element.setAttribute("data-id", _id);
@@ -71,6 +74,7 @@ function deleteCreateElement(_id,todo_object) {
     return todo_element;
 }
 
+//checkbox
 function createCheckbox(_id,todo_object) {
     var _div = document.createElement("div");
     var checkbox = document.createElement("input");
@@ -94,17 +98,19 @@ function createTitle(todo_object) {
     todo_text.innerText = todo_object.title;
     return todo_text;
 }
+
+//Delete button
 function createDeleteX(_id) {
     var x_div = document.createElement("div");
-    //x_div.setAttribute("class", "col-xs-1");
     var delete_x = document.createElement("button");
     delete_x.setAttribute("class", "btn btn-link");
-    delete_x.innerText = "X";
+    delete_x.innerHTML = "X";
     delete_x.setAttribute("onclick", "getDeletedTODOAJAX(" + _id + ")");
     x_div.appendChild(delete_x);
     return x_div;
 }
 
+//visibility button of compete todos section
 function completeVisibilityToggle() {
     var content = document.getElementById(COMPELTE_TODO_ID);
     if(content.style.display == 'block')
@@ -112,6 +118,8 @@ function completeVisibilityToggle() {
     else
         content.style.display = 'block';
 }
+
+//visibility button of deleted todos section
 function deleteVisibilityToggle() {
     var content = document.getElementById(DELETE_TODO_ID);
     if(content.style.display == 'block')
@@ -119,9 +127,6 @@ function deleteVisibilityToggle() {
     else
         content.style.display = 'block';
 }
-
-
-
 
 // Get all the todos
 function getTodosAJAX() {
@@ -140,8 +145,7 @@ function getTodosAJAX() {
     xhr.send(data = null);
 }
 
-
-
+//Add todo
 function addTodoAJAX() {
     var title = document.getElementById(TODO_ID_NEW).value;
     console.log(title);
@@ -165,6 +169,7 @@ function addTodoAJAX() {
     xhr.send(body_data);
 }
 
+//get deleted todos
 function getDeletedTODOAJAX(id) {
     var xhr = new XMLHttpRequest();
 //xhr - JS object for making requests to server via JS
@@ -187,6 +192,7 @@ function getDeletedTODOAJAX(id) {
     xhr.send(body_data);
 }
 
+//get active todos
 function getActiveTODOAJAX(id) {
     var xhr = new XMLHttpRequest();
 //xhr - JS object for making requests to server via JS
@@ -211,6 +217,7 @@ function getActiveTODOAJAX(id) {
     xhr.send(body_data);
 }
 
+//get completed todos
 function getCompleteTODOAJAX(id) {
     var xhr = new XMLHttpRequest();
 //xhr - JS object for making requests to server via JS

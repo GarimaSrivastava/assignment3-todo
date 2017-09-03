@@ -3,64 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TODO LIST</title>
+    <title>TODO APP</title>
     <link rel = "stylesheet" href="/style.css"/>
 </head>
 <body>
 <div class = "container-fluid">
 
     <div class = "heading container-fluid">
-        <h1>  My TODO</h1> <br>
+        <h1>  My Todos</h1> <br>
     </div>
 
-    <div class="active-todo container-fluid breathTop borderBottom">
+    <div class="active-todo container-fluid top border">
         <div class="col-xs-2"></div>
         <div class="col-xs-8">
-            <div><p><b>ACTIVE TODO</b></p></div>
-            <div id ="todo_list_div_active"></div>
+            <div><p><b>Active Todos</b></p></div>
+            <div id ="todo_list_active"></div>
         </div>
 
     </div>
 
-
-
-
-    <div class="container-fluid borderBottom">
+    <div class="container-fluid border">
         <div class="col-xs-2"></div>
         <div id="add_todo_div" class="col-xs-8">
-            <div><p><b>ADD TODO</b></p></div>
+            <div class="add"><p><b>Add Todo</b></p></div>
             <div class="col-xs-6 w3-container">
-                <input id="new_todo_input" type="text" placeholder="Todo Title Goes Here" class="w3-input">
+                <input id="todo_input" type="text" placeholder="Enter Todo">
             </div>
-            <div class="btn-group">
-
-                <button  class="btn-xs" onclick="addTodoAJAX()">ADD</button>
-
-            </div>
+            <div>
+                <button class="button" onclick="addTodoAJAX()">ADD</button>
+            </div><br>
         </div>
     </div>
 
-
-
-    <div class="container-fluid borderBottom">
+    <div class="container-fluid border">
         <div class="col-xs-2"></div>
         <div class="col-xs-8">
             <p><b>Completed Todos</b></p>
-            <div id="todo_list_div_complete"></div>
+            <div id="todo_list_complete"></div>
         </div>
         <div class="col-xs-2">
             <button class="btn btn-link btn-xs" onclick="completeVisibilityToggle()">Hide Completed Items</button>
         </div>
     </div>
 
-
     <div class="container-fluid">
         <div class="col-xs-2"></div>
         <div class="col-xs-8">
-            <div><p><b>Deleted TODO</b></p></div>
-
-            <div id="todo_list_div_delete" >
-
+            <div><p><b>Deleted Todos</b></p></div>
+            <div class="col-xs-2"></div>
+            <div id="todo_list_delete" class="col-xs-10">
             </div>
         </div>
         <div class="col-xs-2">
@@ -68,17 +59,16 @@
         </div>
     </div>
 
-
 </div>
 
 <script src = "/script.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
+<!--jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
+<!-- JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>

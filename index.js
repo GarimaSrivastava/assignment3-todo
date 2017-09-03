@@ -45,7 +45,7 @@ app.post("/api/todos",function (req,res) {
 
     if(!todo || todo == "" || todo.trim() == "")
     {
-        res.status(400).json({error: "Todo title Can't be empty"});
+        res.status(400).json({error: "Enter title first!!!"});
     }
     else
     {
