@@ -13,7 +13,7 @@ Active todos section consists of all the active todo elements. Add todo section 
 
 ## Features not built
 
-1. Checkboxes 
+1. UI of Checkboxes 
 
 ## Known issues
 
