@@ -14,7 +14,4 @@ Active todos section consists of all the active todo elements. Add todo section 
 ## Features not built
 
 1. UI of Checkboxes 
-
-## Known issues
-
-1. Hide functionality of completed and deleted todos section is not working when the button is clicked for the first time. 
+2. UI of Input Box
