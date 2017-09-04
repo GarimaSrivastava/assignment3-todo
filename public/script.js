@@ -113,19 +113,19 @@ function createDeleteX(_id) {
 //visibility button of compete todos section
 function completeVisibilityToggle() {
     var content = document.getElementById(COMPELTE_TODO_ID);
-    if(content.style.display == 'block')
-        content.style.display = 'none';
-    else
+    if(content.style.display == 'none')
         content.style.display = 'block';
+    else
+        content.style.display = 'none';
 }
 
 //visibility button of deleted todos section
 function deleteVisibilityToggle() {
     var content = document.getElementById(DELETE_TODO_ID);
-    if(content.style.display == 'block')
-        content.style.display = 'none';
-    else
+    if(content.style.display == 'none')
         content.style.display = 'block';
+    else
+        content.style.display = 'none';
 }
 
 // Get all the todos
